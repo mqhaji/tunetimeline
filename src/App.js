@@ -1,24 +1,15 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from './pages/Home';
-import Login from './pages/Login';
+import LoginPage from "./pages/Login"; // barrel resolves index.js
+import HomePage from "./pages/Home";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
- 

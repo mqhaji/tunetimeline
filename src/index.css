@@ -1,13 +1,91 @@
+:root {
+  --spotify-green: #1ed760;
+  --spotify-green-hover: #3be476;
+  --spotify-black: #121212;
+  --spotify-dark-gray: #181818;
+  --spotify-white: #ffffff;
+  --spotify-gray: #b3b3b3;
+  --spotify-deep-gray: #282828;
+}
+
+html,
 body {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--spotify-white);
+  background-blend-mode: overlay;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--spotify-white);
+}
+
+p,
+span {
+  color: var(--spotify-gray);
+}
+
+/* Login layout */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--spotify-black);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Spotify login button */
+.spotify-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: clamp(180px, 40vw, 280px);
+  aspect-ratio: 4.75 / 1;
+
+  background-color: var(--spotify-green);
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.spotify-login-button:hover {
+  background-color: var(--spotify-green-hover);
+  transform: scale(1.03); /* pop out effect */
+}
+
+.spotify-logo {
+  height: 60%;
+  width: auto;
+}
+
+.spotify-login-text {
+  color: black;
+}
+
+/* Mobile text scale */
+@media (max-width: 480px) {
+  .spotify-login-button {
+    font-size: 0.9rem;
+  }
 }
